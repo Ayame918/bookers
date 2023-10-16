@@ -1,21 +1,20 @@
-<%#<h1>Book was successfully created.</h1>%>
 <h1>Books</h1>
-
- <table class ="table-title">
-  <tr>
+<div class = "Books">
+ <table width="20%">
+  <tr align="center">
    <th>Title</th>
    <th>Body</th>
    <th colspan="3"></th>
   </tr>
  </table>
- 
- <table class ="table-body">
+
+ <table width="60%">
   <% @books.each do |book| %>
   <tr>
-   <td><%=link_to book.title, book_path(book.id) %></td>
-   <td><%=link_to book.body, book_path(book.id) %></td>
+   <td><%=  book.title %></td>
+   <td><%= book.body %></td>
    <td>
-    <%= link_to "Show", books_path %>
+    <%= link_to "Show", book_path(book.id) %>
    </td>
    <td>
     <%= link_to "Edit", edit_book_path(book.id) %>
@@ -26,20 +25,32 @@
   </tr>
   <% end %>
  </table>
+</div>
 
+ <h2>New book</h2>
+<div class = "error">
+ <% if @book.errors.any? %>
+  <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2><%#エラーメッセージ%>
+  <ul>
+   <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+<% end %>
+</div>
 
-
-
-  <% @books.each do |book| %>
-  
-   <p>title</p>
-   <span>
-     <%= link_to book.title, book_path(book.id) %>
-   </span>
-   
-  <p>
-   <%= link_to "Show", books_path %>
-   <%= link_to "Edit", edit_book_path(book.id) %>
-   <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-  </p>
+ <div class = "New">
+  <%= form_with model: Book.new do |f| %>
+ <div class = "field">
+   <label for="book_title">Title</label>
+    <%= f.text_field :title %>
+  </div>
+  <div class = "field">
+   <label for="book_body">Body</label>
+   <%= f.text_area :body %>
+  </div>
+  <div class = "submit">
+   <%= f.submit 'Create Book' %>
+  </div>
   <% end %>
+</div>
