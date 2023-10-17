@@ -20,6 +20,21 @@
   box-sizing:border-box;
 }
 
+h1 {
+  margin:15px 0;
+}
+
+h2 {
+  margin:15px 0;
+}
+
+ p{
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
 body{
   margin:33px;
   color:#333;
@@ -32,18 +47,14 @@ body{
 .error h2{
   text-align: left;
   font-weight: bold;
-  margin:-7px;
   margin-bottom:0;
   padding:5px 5px 5px 15px;
-  font-size:12px;
+  font-size:13px;
   color: #fff;
   background-color:#c00;
 }
 .error{
   width:450px;
-  /*padding:7px;*/
-  padding-bottom:0;
-  margin-bottom:0;
   /*border:2px solid red;*/
   font-size:13px;
   background-color:#f0f0f0;
@@ -60,10 +71,11 @@ ul{
 label{
   display:block;
 }
-.field {
+.field{
   margin-bottom:10px;
 }
 
 .submit{
   margin-bottom:10px;
 }
+

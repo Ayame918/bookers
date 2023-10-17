@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'#削除
   post '/books' => 'books#create'#データ保存
   get '/new' => 'books#new'#New Book
-  get '/' => 'homes#top'#bookersへようこそ
+  get root to: 'homes#top'#bookersへようこそ
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

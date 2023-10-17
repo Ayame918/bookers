@@ -1,17 +1,22 @@
-
-
-
-<div class = "field_show">
-  <strong>Title:</strong>
-  <p><%= @book.title %></p>
+<div>
+  <%= flash[:notice]%>
 </div>
 
 <div class = "field_show">
-  <strong>Title:</strong>
-  <p><%= @book.body %></p>
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
 </div>
 
-<div class = "submit_show">
+<div class = "field_show">
+  <p>
+    <strong>Title:</strong>
+    <%= @book.body %>
+  </p>
+</div>
+
+<div class = "submit">
 <p>
   <%= link_to "Edit", edit_book_path(@book.id) %>
   |
